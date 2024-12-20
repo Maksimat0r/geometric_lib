@@ -15,22 +15,30 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
+    env:
+      FULL_NAME: "Праздников Максим Кириллович"  # Переменная для ФИО
+      GROUP_NUMBER: "М3111"  # Переменная для номера группы
+
     steps:
     - name: Print user details
       run: |
-        echo "ФИО: Праздников Максим Кириллович"
-        echo "Номер группы: М3111"
-        echo "GitHub username: $Maksimat0r"
+        echo "ФИО: ${{ env.FULL_NAME }}"
+        echo "Номер группы: ${{ env.GROUP_NUMBER }}"
+        echo "GitHub username: ${{ github.actor }}"  # Переменная для GitHub username
 
     - name: Set up Python 3.13
       uses: actions/setup-python@v4
       with:
         python-version: 3.13
 
+    - name: Check if requirements.txt exists
+      run: |
+        if [ ! -f ./requirements.txt ]; then echo "requirements.txt not found!"; exit 1; fi
+
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install -r requirements.txt
+        pip install -r ./requirements.txt
 
     - name: Run tests
       run: |
