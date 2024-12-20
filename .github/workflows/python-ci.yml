@@ -20,6 +20,11 @@ jobs:
       GROUP_NUMBER: "М3111"  # Переменная для номера группы
 
     steps:
+    - name: Clear workspace cache
+      run: |
+        rm -rf ./*
+        git reset --hard
+
     - name: Print user details
       run: |
         echo "ФИО: ${{ env.FULL_NAME }}"
@@ -30,10 +35,6 @@ jobs:
       uses: actions/setup-python@v4
       with:
         python-version: 3.13
-
-    - name: Check if requirements.txt exists
-      run: |
-        if [ ! -f ./requirements.txt ]; then echo "requirements.txt not found!"; exit 1; fi
 
     - name: Install dependencies
       run: |
