@@ -24,4 +24,4 @@ def calc(fig, func, size):
 
 circle.area(1)
 square.area(1)
-triangle.area(1)
+triangle.area(1, 1, 1)
