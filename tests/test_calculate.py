@@ -1,6 +1,7 @@
 import unittest
 from calculate import calc
 
+
 class TestCalculate(unittest.TestCase):
     def test_calc_circle_area(self):
         result = calc('circle', 'area', [1])
@@ -29,4 +30,3 @@ class TestCalculate(unittest.TestCase):
     def test_invalid_size_for_triangle(self):
         with self.assertRaises(TypeError):
             calc('triangle', 'area', [3, 4])
-
