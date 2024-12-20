@@ -16,6 +16,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: Clear pip cache
+      run: |
+      rm -rf ~/.cache/pip
+
     - name: Print user details
       run: |
         echo "ФИО: Праздников Максим Кириллович"
