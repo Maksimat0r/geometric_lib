@@ -2,6 +2,7 @@ import circle
 import square
 import triangle
 
+
 figs = ['circle', 'square', 'triangle']
 funcs = ['perimeter', 'area']
 sizes = {
@@ -13,10 +14,9 @@ sizes = {
     'perimeter-triangle': 3,
 }
 
+
 def calc(fig, func, size):
     assert fig in figs, "Invalid figure"
     assert func in funcs, "Invalid function"
-
     result = eval(f'{fig}.{func}(*{size})')
-    return result  # Возвращаем результат, а не печатаем
-
+    return result
