@@ -1,3 +1,8 @@
+import circle
+import square
+import triangle
+
+
 figs = ['circle', 'square', 'triangle']
 funcs = ['perimeter', 'area']
 sizes = {
@@ -15,3 +20,8 @@ def calc(fig, func, size):
     assert func in funcs, "Invalid function"
     result = eval(f'{fig}.{func}(*{size})')
     return result
+
+
+circle.area(1)
+square.area(1)
+triangle.area(1)
