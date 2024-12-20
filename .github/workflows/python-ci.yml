@@ -20,6 +20,10 @@ jobs:
       GROUP_NUMBER: "М3111"  # Переменная для номера группы
 
     steps:
+    - name: Debug directory
+      run: |
+        pwd
+        ls -la
     - name: Print user details
       run: |
         echo "ФИО: ${{ env.FULL_NAME }}"
