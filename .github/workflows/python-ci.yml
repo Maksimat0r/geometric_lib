@@ -20,11 +20,6 @@ jobs:
       GROUP_NUMBER: "М3111"  # Переменная для номера группы
 
     steps:
-    - name: Clear workspace cache
-      run: |
-        rm -rf ./*
-        git reset --hard
-
     - name: Print user details
       run: |
         echo "ФИО: ${{ env.FULL_NAME }}"
